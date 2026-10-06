@@ -1,0 +1,38 @@
+# ===================== Java / Maven 构建产物 =====================
+target/
+build/
+out/
+*.class
+*.war
+*.ear
+*.nar
+*.log
+hs_err_pid*
+replay_pid*
+
+# 依赖 jar 不入库；但 Maven Wrapper 自带的 jar 需要保留（用 ! 放行）
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===================== IntelliJ IDEA =====================
+# 注意：.idea/dataSources*.xml 可能包含数据库连接与口令，必须排除
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ===================== Eclipse / VS Code / NetBeans =====================
+.settings/
+.project
+.classpath
+.factorypath
+.vscode/
+nbproject/
+
+# ===================== 操作系统 =====================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===================== 本仓库特别说明 =====================
+# tmp/ 目录【不能忽略】：n8/TestWordCount 依赖 tmp/1..26.txt 作为词频统计测试数据
