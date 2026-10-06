@@ -53,10 +53,9 @@ public class TestDeadLink {
     }
 
     final static int hash(Object k) {
+        // 原代码这里调用 sun.misc.Hashing.stringHash32(String)，该内部类仅存在于 JDK 7，
+        // JDK 8 已移除；且 h 恒为 0，此分支永远不成立，属于死代码，故删除以兼容 JDK 8
         int h = 0;
-        if (0 != h && k instanceof String) {
-            return sun.misc.Hashing.stringHash32((String) k);
-        }
         h ^= k.hashCode();
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);

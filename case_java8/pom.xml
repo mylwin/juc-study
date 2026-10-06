@@ -8,6 +8,8 @@
     <artifactId>case_java8</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
+        <!-- 源码为 UTF-8，不指定时命令行 Maven 会按系统默认编码(GBK)编译，出现 unmappable character 错误 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -45,8 +47,25 @@
         <dependency>
             <groupId>org.openjdk.jol</groupId>
             <artifactId>jol-core</artifactId>
-            <version>0.10-TEST</version>
+            <version>0.10</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 显式指定编译级别：settings.xml 里 activeByDefault 的 profile 会用
+                 maven.compiler.source/target 覆盖 pom 属性（用户属性优先于 pom 属性），
+                 插件级 configuration 不受该 profile 影响 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

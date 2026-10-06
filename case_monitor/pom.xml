@@ -53,6 +53,17 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- settings.xml 里 activeByDefault 的 profile 会用 maven.compiler.* 覆盖 pom 属性，
+			     插件级 configuration 不受它影响 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
