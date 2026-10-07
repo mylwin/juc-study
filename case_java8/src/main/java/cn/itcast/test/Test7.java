@@ -2,6 +2,9 @@ package cn.itcast.test;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * sleep的线程可以被其他线程interrupt打断，抛出InterruptedException
+ */
 @Slf4j(topic = "c.Test7")
 public class Test7 {
 

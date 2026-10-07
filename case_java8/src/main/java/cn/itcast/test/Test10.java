@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 
 import static cn.itcast.n2.util.Sleeper.sleep;
 
+/**
+ * join方法，让当前线程等待，等待的线程执行完毕后，继续执行
+ */
 @Slf4j(topic = "c.Test10")
 public class Test10 {
     static int r = 0;

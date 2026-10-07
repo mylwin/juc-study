@@ -6,6 +6,11 @@ import java.util.concurrent.TimeUnit;
 
 import static cn.itcast.n2.util.Sleeper.sleep;
 
+/**
+ * join方法的应用
+ * 如果给方法传入一个参数，则表示最多等待该线程执行完毕，最多等待millis时间
+ * 但是如果线程执行完毕，则不会等待
+ */
 @Slf4j(topic = "c.TestJoin")
 public class TestJoin {
     static int r = 0;

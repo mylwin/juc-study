@@ -2,6 +2,10 @@ package cn.itcast.test;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 线程的yield方法，让当前线程让出cpu，进入就绪状态，但不阻塞，让出的时间不确定
+ * 线程的优先级，1-10，数字越大优先级越高
+ */
 @Slf4j(topic = "c.Test9")
 public class Test9 {
 

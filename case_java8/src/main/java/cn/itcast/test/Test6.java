@@ -2,6 +2,10 @@ package cn.itcast.test;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 线程的sleep方法，让当前线程休眠指定的时间
+ * 此时线程状态为TIMED_WAITING
+ */
 @Slf4j(topic = "c.Test6")
 public class Test6 {
 

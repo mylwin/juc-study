@@ -4,6 +4,11 @@ import cn.itcast.Constants;
 import cn.itcast.n2.util.FileReader;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 线程的run和start方法
+ * 启动线程的正确方式是调用start方法，而不是调用run方法
+ * 因为调用run方法只是让线程执行了run方法中的代码，而没有启动线程
+ */
 @Slf4j(topic = "c.Test4")
 public class Test4 {
 

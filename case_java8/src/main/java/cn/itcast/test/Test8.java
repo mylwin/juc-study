@@ -4,6 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * TimeUnit的使用，让代码更易读
+ * 和Thread.sleep()方法相比，TimeUnit的sleep()方法更易读，更灵活
+ */
 @Slf4j(topic = "c.Test8")
 public class Test8 {
 
