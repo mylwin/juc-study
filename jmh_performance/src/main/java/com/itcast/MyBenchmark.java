@@ -30,15 +30,22 @@ import org.openjdk.jmh.annotations.*;
 import java.util.Arrays;
 import java.util.concurrent.FutureTask;
 
-@Fork(1)
-@BenchmarkMode(Mode.AverageTime)
-@Warmup(iterations=3)
-@Measurement(iterations=5)
+@Fork(1)  // 派生进程数
+@BenchmarkMode(Mode.AverageTime)  // 测试模式
+@Warmup(iterations=3)  // 预热次数
+@Measurement(iterations=5)  // 测试次数
 public class MyBenchmark {
-    static int[] ARRAY = new int[1000_000_00];
+    static int[] ARRAY = new int[1000_000_00];  // 静态变量数组，大小1亿
+    // 静态块，数组元素赋值为1
     static {
         Arrays.fill(ARRAY, 1);
     }
+
+    /**
+     * 并发4个线程，每个线程对数组2500万个元素进行求和
+     * @return 求和结果
+     * @throws Exception 异常
+     */
     @Benchmark
     public int c() throws Exception {
         int[] array = ARRAY;
@@ -76,6 +83,12 @@ public class MyBenchmark {
         new Thread(t4).start();
         return t1.get() + t2.get() + t3.get()+ t4.get();
     }
+
+    /**
+     * 使用1个线程，对数组1亿个元素进行求和
+     * @return 求和结果
+     * @throws Exception 异常
+     */
     @Benchmark
     public int d() throws Exception {
         int[] array = ARRAY;
