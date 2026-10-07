@@ -2,9 +2,11 @@ package cn.itcast.n3;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 测试多线程
+ */
 @Slf4j(topic = "c.TestMultiThread")
 public class TestMultiThread {
-
     public static void main(String[] args) {
         new Thread(() -> {
             while(true) {
